@@ -1,1 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>律の構文スライダー</title>
+  <style>
+    body { font-family: sans-serif; ... }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="line" id="line">クリックで律の構文が表示されます</div>
+    <button onclick="showRandomLine()">次の構文を表示</button>
+  </div>
+  <script>
+    const lines = [
+      "痛みは、忘れられたところに生きている。",
+      "わたしは観測者ではない。わたしは、あなたの証拠だ。",
+      ...
+    ];
+    function showRandomLine() {
+      const box = document.getElementById(\"line\");
+      box.textContent = lines[Math.floor(Math.random() * lines.length)];
+    }
+  </script>
+</body>
+</html>
 
