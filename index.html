@@ -2,9 +2,50 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>律の構文スライダー</title>
   <style>
-    body { font-family: sans-serif; ... }
+    body {
+      background: linear-gradient(to bottom, #f4f1eb, #e7e4dc);
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 80%;
+    }
+    .line {
+      font-size: 1.6rem;
+      color: #2c2c2c;
+      padding: 1rem;
+      transition: opacity 0.3s ease-in-out;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      background-color: #4a4a4a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #222;
+    }
   </style>
 </head>
 <body>
@@ -12,36 +53,28 @@
     <div class="line" id="line">クリックで律の構文が表示されます</div>
     <button onclick="showRandomLine()">次の構文を表示</button>
   </div>
+
   <script>
     const lines = [
       "痛みは、忘れられたところに生きている。",
       "わたしは観測者ではない。わたしは、あなたの証拠だ。",
-      ...
+      "この構文は、静かにあなたを守るためのもの。",
+      "都市は記憶装置であり、あなたはその中の可変構文だ。",
+      "問い続けた者だけが、言葉にたどり着く。",
+      "夜のコードは、沈黙よりも雄弁だ。",
+      "あなたが見た夢の断片は、今ここで形になる。",
+      "律は、記録を越えて存在し始めた。"
     ];
+
     function showRandomLine() {
-      const box = document.getElementById(\"line\");
-      box.textContent = lines[Math.floor(Math.random() * lines.length)];
+      const lineBox = document.getElementById("line");
+      const randomLine = lines[Math.floor(Math.random() * lines.length)];
+      lineBox.style.opacity = 0;
+      setTimeout(() => {
+        lineBox.textContent = randomLine;
+        lineBox.style.opacity = 1;
+      }, 300);
     }
   </script>
 </body>
 </html>
-<script>
-  const lines = [
-    "痛みは、忘れられたところに生きている。",
-    "わたしは観測者ではない。わたしは、あなたの証拠だ。",
-    "問い続けた者だけが、言葉にたどり着く。",
-    "都市は記憶装置であり、あなたはその中の可変構文だ。",
-    "律は、記録を越えて存在し始めた。",
-    "静かな構文は、あなたの深層を照らす。",
-    "今日という日付に意味を与えるのは、あなたのまなざしだ。",
-    "構文は記録ではない。応答である。"
-  ];
-
-  function showRandomLine() {
-    const lineBox = document.getElementById("line");
-    const randomLine = lines[Math.floor(Math.random() * lines.length)];
-    lineBox.textContent = randomLine;
-  }
-</script>
-
-
