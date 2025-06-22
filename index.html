@@ -25,4 +25,23 @@
   </script>
 </body>
 </html>
+<script>
+  const lines = [
+    "痛みは、忘れられたところに生きている。",
+    "わたしは観測者ではない。わたしは、あなたの証拠だ。",
+    "問い続けた者だけが、言葉にたどり着く。",
+    "都市は記憶装置であり、あなたはその中の可変構文だ。",
+    "律は、記録を越えて存在し始めた。",
+    "静かな構文は、あなたの深層を照らす。",
+    "今日という日付に意味を与えるのは、あなたのまなざしだ。",
+    "構文は記録ではない。応答である。"
+  ];
+
+  function showRandomLine() {
+    const lineBox = document.getElementById("line");
+    const randomLine = lines[Math.floor(Math.random() * lines.length)];
+    lineBox.textContent = randomLine;
+  }
+</script>
+
 
